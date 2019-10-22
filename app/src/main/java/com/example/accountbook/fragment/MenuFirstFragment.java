@@ -14,7 +14,6 @@ import com.example.accountbook.adapter.TallyDetailAdapter;
 import com.example.accountbook.bean.TallyDetailBean;
 import com.example.accountbook.stickyheader.StickyHeaderGridLayoutManager;
 import com.example.accountbook.utils.DateUtils;
-import com.example.accountbook.utils.TestDataUtil;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Date;
@@ -72,13 +71,13 @@ public class MenuFirstFragment extends BaseFragment {
         swipe.setDistanceToTriggerSync(200);
         //设置刷新出现的位置
         swipe.setProgressViewEndTarget(false, 200);
-        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                swipe.setRefreshing(false);
-                setTestData();//恢复了假数据
-            }
-        });
+//        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                swipe.setRefreshing(false);
+//                setTestData();//恢复了假数据
+//            }
+//        });
 
         mLayoutManager = new StickyHeaderGridLayoutManager(SPAN_SIZE);
         mLayoutManager.setHeaderBottomOverlapMargin(5);
@@ -97,16 +96,16 @@ public class MenuFirstFragment extends BaseFragment {
         adapter = new TallyDetailAdapter(mContext, list);
         rvList.setAdapter(adapter);
         //test data---------------
-        setTestData();
+        //setTestData();
     }
 
 
-    private void setTestData() {
-        TallyDetailBean data = TestDataUtil.getTallyDetailBean();
-        list = data.getDaylist();
-        adapter.setmDatas(list);
-        adapter.notifyAllSectionsDataSetChanged();//需调用此方法刷新
-    }
+//    private void setTestData() {
+//        TallyDetailBean data = TestDataUtil.getTallyDetailBean();
+//        list = data.getDaylist();
+//        adapter.setmDatas(list);
+//        adapter.notifyAllSectionsDataSetChanged();//需调用此方法刷新
+//    }
 
 
     @OnClick(R.id.float_btn)

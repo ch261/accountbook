@@ -20,7 +20,7 @@
             android:id="@+id/data_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2017\n年"
+            android:text="2019\n年"
             android:textColor="@color/text_black6"
             android:textSize="15sp"
             android:singleLine="true"/>
@@ -69,7 +69,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="结余(元)"
+            android:text="支出(元)"
             android:textColor="@color/text_black6"
             android:textSize="15sp"
             android:singleLine="true"/>
@@ -94,7 +94,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="相比上月收入"
+            android:text="收入"
             android:textColor="@color/text_black6"
             android:textSize="15sp"
             android:singleLine="true"/>

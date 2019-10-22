@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.accountbook.fragment.MenuFirstFragment;
+import com.example.accountbook.fragment.MenuMyFragment;
+import com.example.accountbook.fragment.MenuTypeFragment;
 import com.example.accountbook.view.BaseBottomBar;
 
 import butterknife.BindView;
@@ -77,8 +79,10 @@ public class MainActivity extends BaseActivity implements BaseBottomBar.OnBottom
             if (index == 0) {
                 fragment = new MenuFirstFragment();
             } else if (index == 1) {
+                fragment = new MenuTypeFragment();
 
             } else if (index == 2) {
+                fragment = new MenuMyFragment();
 
             }
 

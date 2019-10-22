@@ -9,11 +9,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="131dp"
-        android:layout_height="21dp"
-        android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="@string/third_title"
-        android:textSize="50sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="50sp" />
 </LinearLayout>

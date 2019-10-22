@@ -18,6 +18,7 @@ import com.example.accountbook.adapter.MyPagerAdapter;
 import com.example.accountbook.adapter.TallyBookNoteAdapter;
 import com.example.accountbook.bean.TallyNoteBean;
 import com.example.accountbook.utils.DateUtils;
+import com.example.accountbook.utils.TestDataUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -96,12 +97,12 @@ public class AccountBookNoteActivity extends BaseActivity {
         if (type.equals("1")){
             outcomeTv.setSelected(true);
             incomeTv.setSelected(false);
-
+            tallyNoteBean = TestDataUtil.getTallyNoteBeanOut();
         }
         if (type.equals("2")){
             incomeTv.setSelected(true);
             outcomeTv.setSelected(false);
-
+            tallyNoteBean = TestDataUtil.getTallyNoteBeanIn();
         }
 
         mDatas = tallyNoteBean.getSortlist();
