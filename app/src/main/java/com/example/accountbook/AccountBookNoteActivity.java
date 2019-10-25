@@ -14,10 +14,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.bigkoo.pickerview.TimePickerView;
+import com.example.accountbook.Activity.BaseActivity;
 import com.example.accountbook.adapter.MyPagerAdapter;
 import com.example.accountbook.adapter.TallyBookNoteAdapter;
 import com.example.accountbook.bean.TallyNoteBean;
-import com.example.accountbook.utils.DateUtils;
 import com.example.accountbook.utils.TestDataUtil;
 
 import java.text.SimpleDateFormat;
@@ -73,18 +73,6 @@ public class AccountBookNoteActivity extends BaseActivity {
 
 
 
-    @Override
-    protected int getLayout() {
-        return R.layout.activity_accountbook_note;
-    }
-
-    @Override
-    protected void initEventAndData() {
-
-        dateTv.setText(DateUtils.getCurDateStr("yyyy-MM-dd"));
-        setTitleStatus();
-
-    }
 
 
 
@@ -129,7 +117,7 @@ public class AccountBookNoteActivity extends BaseActivity {
         page = (int) Math.ceil(mDatas.size() * 1.0 / 10);
         for (int i = 0; i < page; i++) {
             tempList = new ArrayList<>();
-            View view = inflater.inflate(R.layout.pager_item_tb_type, null);
+            View view = inflater.inflate(R.layout.item_tb_type_page, null);
             RecyclerView recycle = (RecyclerView) view.findViewById(R.id.pager_type_recycle);
             if (i != page - 1 || (i == page -1 && isTotalPage)){
                 for (int j = 0; j < 10; j++) {
@@ -339,4 +327,8 @@ public class AccountBookNoteActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected int getLayoutId() {
+        return 0;
+    }
 }

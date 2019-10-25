@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.accountbook.AccountBookNoteActivity;
+import com.example.accountbook.Activity.BillAddActivity;
 import com.example.accountbook.R;
 import com.example.accountbook.adapter.TallyDetailAdapter;
 import com.example.accountbook.bean.TallyDetailBean;
@@ -43,7 +43,7 @@ public class MenuFirstFragment extends BaseFragment {
     RecyclerView rvList;
     @BindView(R.id.swipe)
     SwipeRefreshLayout swipe;
-    @BindView(R.id.float_btn)
+    @BindView(R.id.add_btn)
     FloatingActionButton floatBtn;
     Unbinder unbinder;
 
@@ -108,9 +108,9 @@ public class MenuFirstFragment extends BaseFragment {
 //    }
 
 
-    @OnClick(R.id.float_btn)
+    @OnClick(R.id.add_btn)
     public void onViewClicked() {
-        Intent intent = new Intent(getContext(), AccountBookNoteActivity.class);
+        Intent intent = new Intent(getContext(), BillAddActivity.class);
         startActivity(intent);
     }
 }

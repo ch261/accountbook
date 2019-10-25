@@ -20,7 +20,7 @@
       >
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_list"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
@@ -30,7 +30,7 @@
 
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/float_btn"
+      android:id="@+id/add_btn"
       android:layout_alignParentRight="true"
       android:layout_alignParentBottom="true"
       android:layout_margin="30dp"

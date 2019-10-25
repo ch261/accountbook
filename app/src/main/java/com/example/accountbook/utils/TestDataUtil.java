@@ -320,36 +320,6 @@ public class TestDataUtil {
                 "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/lijin@2x.png\"\n" +
                 "        },\n" +
                 "        {\n" +
-                "            \"sort_id\":\"346\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"吃啊\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"351\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"xxx\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"356\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"爱情\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"357\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"新年快乐\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"sort_id\":\"359\",\n" +
-                "            \"uid\":\"262\",\n" +
-                "            \"sort_name\":\"阿卡丽\",\n" +
-                "            \"sort_img\":\"/UF/Uploads/Noteimg/blacksort/tianjiade@2x.png\"\n" +
-                "        },\n" +
-                "        {\n" +
                 "            \"sort_id\":\"0\",\n" +
                 "            \"uid\":\"0\",\n" +
                 "            \"sort_name\":\"添加\",\n" +
@@ -363,15 +333,15 @@ public class TestDataUtil {
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_28\",\n" +
-                "            \"pay_name\":\"银行卡-尾号8566\"\n" +
+                "            \"pay_name\":\"银行卡\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_22\",\n" +
-                "            \"pay_name\":\"银行卡-尾号1111\"\n" +
+                "            \"pay_name\":\"支付宝\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_10\",\n" +
-                "            \"pay_name\":\"银行卡-尾号4565\"\n" +
+                "            \"pay_name\":\"微信\"\n" +
                 "        }\n" +
                 "    ]\n" +
                 "}";
@@ -465,35 +435,11 @@ public class TestDataUtil {
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_29\",\n" +
-                "            \"pay_name\":\"银行卡-尾号8888\"\n" +
+                "            \"pay_name\":\"银行卡、\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"3_28\",\n" +
-                "            \"pay_name\":\"银行卡-尾号8566\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_10\",\n" +
-                "            \"pay_name\":\"银行卡-尾号4565\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_9\",\n" +
-                "            \"pay_name\":\"银行卡-尾号4565\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_8\",\n" +
-                "            \"pay_name\":\"银行卡-尾号4565\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_7\",\n" +
-                "            \"pay_name\":\"银行卡-尾号4563\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_4\",\n" +
-                "            \"pay_name\":\"银行卡-尾号5467\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pay_type\":\"3_1\",\n" +
-                "            \"pay_name\":\"银行卡-尾号7899\"\n" +
+                "            \"pay_name\":\"支付宝\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "            \"pay_type\":\"4\",\n" +

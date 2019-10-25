@@ -1,4 +1,4 @@
-package com.example.accountbook;
+package com.example.accountbook.Activity;
 
 import android.annotation.SuppressLint;
 import android.os.Handler;
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.accountbook.R;
 import com.example.accountbook.fragment.MenuFirstFragment;
 import com.example.accountbook.fragment.MenuMyFragment;
 import com.example.accountbook.fragment.MenuTypeFragment;
@@ -21,8 +22,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public class MainActivity extends BaseActivity implements BaseBottomBar.OnBottomBarListener
-         {
+public class MainActivity extends BaseActivity implements BaseBottomBar.OnBottomBarListener {
 
 
     public @BindView(R.id.title_tv)
@@ -54,15 +54,20 @@ public class MainActivity extends BaseActivity implements BaseBottomBar.OnBottom
                     mCanClickBoolean = true;
                     break;
             }
+
         }
     };
 
-
-
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
     protected int getLayout() {
         return R.layout.activity_main;
     }
+
+
 
     protected void initEventAndData() {
         mFragmentManager = getSupportFragmentManager();
@@ -155,5 +160,10 @@ public class MainActivity extends BaseActivity implements BaseBottomBar.OnBottom
 
     @OnClick(R.id.right_btn)
     public void onViewClicked() {
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }

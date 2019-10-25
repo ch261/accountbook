@@ -1,19 +1,8 @@
 package com.example.accountbook.bean;
 
-import java.io.Serializable;
 
-/**
- * Created by Administrator on 2017/10/16 0016.
- */
+public class BaseBean {
 
-public class BaseBean implements Serializable {
-
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * status : 1
-     * message : 成功！
-     */
 
     private int status;
     private String message;
