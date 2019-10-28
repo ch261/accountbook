@@ -21,13 +21,13 @@ import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.accountbook.MyApplication;
 import com.example.accountbook.R;
+import com.example.accountbook.adapter.BookNoteAdapter;
+import com.example.accountbook.adapter.MonthAccountAdapter;
 import com.example.accountbook.bean.BBill;
 import com.example.accountbook.bean.BSort;
 import com.example.accountbook.bean.NoteBean;
 import com.example.accountbook.present.BillContract;
 import com.example.accountbook.present.BillPresenter;
-import com.example.accountbook.adapter.BookNoteAdapter;
-import com.example.accountbook.adapter.MonthAccountAdapter;
 import com.example.accountbook.utils.DateUtils;
 import com.example.accountbook.utils.ProgressUtils;
 import com.example.accountbook.utils.SnackbarUtils;
@@ -97,7 +97,7 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
     /***********************************************************************/
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_accountbook_note;
+        return R.layout.activity_add;
     }
 
     @Override
@@ -244,7 +244,6 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        super.onActivityResult(requestCode, resultCode, intent);
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case 0:
@@ -462,7 +461,7 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
         page = (int) Math.ceil(tempData.size() * 1.0 / 15);
         for (int i = 0; i < page; i++) {
             tempList = new ArrayList<>();
-            View view = inflater.inflate(R.layout.item_tb_type, null);
+            View view = inflater.inflate(R.layout.item_tb_type_page, null);
             RecyclerView recycle = view.findViewById(R.id.pager_type_recycle);
             if (i != page - 1 || (i == page - 1 && isTotalPage)) {
                 for (int j = 0; j < 15; j++) {

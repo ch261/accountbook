@@ -1,6 +1,5 @@
 package com.example.accountbook.present;
 
-import com.example.accountbook.Activity.RxPresenter;
 import com.example.accountbook.bean.BSort;
 import com.example.accountbook.repository.LocalRepository;
 

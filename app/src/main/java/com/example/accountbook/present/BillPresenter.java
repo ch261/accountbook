@@ -2,7 +2,6 @@ package com.example.accountbook.present;
 
 
 import com.example.accountbook.Activity.BaseObserver;
-import com.example.accountbook.Activity.RxPresenter;
 import com.example.accountbook.bean.BBill;
 import com.example.accountbook.repository.LocalRepository;
 

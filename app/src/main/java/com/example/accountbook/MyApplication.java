@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.example.accountbook.bean.MyUser;
 
+import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobUser;
 
 
@@ -14,16 +15,20 @@ public class MyApplication extends Application {
     private static Context context;
     private static MyUser currentUser;
 
-    public static Context getContext() {
-        return context;
-    }
-
     @Override
     public void onCreate() {
         super.onCreate();
         application = this;
         context = getApplicationContext();
+        Bmob.initialize(this, "941f4add6503358048b02b83fcb605f6");
+        currentUser = BmobUser.getCurrentUser(MyUser.class);
     }
+
+
+    public static Context getContext() {
+        return context;
+    }
+
 
     public static String getCurrentUserId() {
         currentUser = BmobUser.getCurrentUser(MyUser.class);

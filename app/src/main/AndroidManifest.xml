@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.accountbook">
 
 
@@ -18,9 +19,10 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:label="@string/appname"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
         <activity
             android:name=".Activity.MainActivity">
             <intent-filter>
@@ -30,22 +32,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AccountBookNoteActivity">
-        </activity>
+            android:name=".Activity.BillAddActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.BillSortActivity"
+            android:screenOrientation="portrait"/>
 
-        <provider
-            android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="com.copasso.cocobill.BmobContentProvider">
-        </provider>
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
     </application>
 
 

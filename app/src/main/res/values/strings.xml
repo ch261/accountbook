@@ -3,5 +3,8 @@
     <string name="first_title">明细</string>
     <string name="second_title">图表</string>
     <string name="third_title">账户</string>
+    <string name="appname">accountbook</string>
     <string name="load_msg">正在加载中&#8230;</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

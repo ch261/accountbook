@@ -42,7 +42,7 @@ public class BillSortActivity extends BaseMVPActivity<BillNoteContract.Presenter
     /**************************************************************************/
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_menu_first;
+        return R.layout.activity_base_list;
     }
 
     @Override
