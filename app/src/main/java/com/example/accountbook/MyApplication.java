@@ -20,7 +20,7 @@ public class MyApplication extends Application {
         super.onCreate();
         application = this;
         context = getApplicationContext();
-        Bmob.initialize(this, "941f4add6503358048b02b83fcb605f6");
+        Bmob.initialize(this, "40f0c2fca73b78754c28cb41a16ae360");
         currentUser = BmobUser.getCurrentUser(MyUser.class);
     }
 
