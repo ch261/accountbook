@@ -15,19 +15,7 @@ public class MyApplication extends Application {
     private static Context context;
     private static MyUser currentUser;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        application = this;
-        context = getApplicationContext();
-        Bmob.initialize(this, "40f0c2fca73b78754c28cb41a16ae360");
-        currentUser = BmobUser.getCurrentUser(MyUser.class);
-    }
 
-
-    public static Context getContext() {
-        return context;
-    }
 
 
     public static String getCurrentUserId() {
@@ -36,4 +24,24 @@ public class MyApplication extends Application {
             return null;
         return BmobUser.getCurrentUser(MyUser.class).getObjectId();
     }
+
+    public static Context getContext() {
+        return context;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        application = this;
+
+        Bmob.initialize(this, "40f0c2fca73b78754c28cb41a16ae360");
+        context = getApplicationContext();
+        currentUser = BmobUser.getCurrentUser(MyUser.class);
+    }
+
+
+
+
+
+
 }
