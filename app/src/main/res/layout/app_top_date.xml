@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="当月支出(元)"
+            android:text="支出(元)"
             android:textColor="@color/textWhite"
             android:textSize="13sp"
             android:singleLine="true"/>
@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="当月收入(元)"
+            android:text="收入(元)"
             android:textColor="@color/textWhite"
             android:textSize="13sp"
             android:singleLine="true"/>

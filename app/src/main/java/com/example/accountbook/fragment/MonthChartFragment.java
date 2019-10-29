@@ -240,7 +240,7 @@ public class MonthChartFragment extends BaseMVPFragment<MonthChartContract.Prese
         }
         DecimalFormat df = new DecimalFormat("0.00%");
         title.setText(sort_name+" : "+df.format(value));
-        rankTitle.setText("排行榜");
+        rankTitle.setText(" ");
         circleBg.setImageDrawable(new ColorDrawable(Color.parseColor(back_color)));
         circleImg.setImageDrawable(PieChartUtils.getDrawable(tMoneyBeanList.get(index).getSortImg()));
 

@@ -18,7 +18,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.example.accountbook.R;
 import com.example.accountbook.adapter.MainFragmentPagerAdapter;
 import com.example.accountbook.bean.BSort;
@@ -28,20 +27,14 @@ import com.example.accountbook.common.Constants;
 import com.example.accountbook.fragment.MonthChartFragment;
 import com.example.accountbook.fragment.MonthListFragment;
 import com.example.accountbook.repository.LocalRepository;
-import com.example.accountbook.utils.DateUtils;
 import com.example.accountbook.utils.GlideCacheUtil;
 import com.example.accountbook.utils.SharedPUtils;
-import com.example.accountbook.utils.SnackbarUtils;
 import com.example.accountbook.utils.ThemeManager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-
-import cn.bmob.v3.BmobUser;
 
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -69,7 +62,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private MonthChartFragment monthChartFragment;
 
 
+
     private MyUser currentUser;
+
 
     /***************************************************************************/
     @Override
@@ -107,27 +102,24 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         tTotal = findViewById(R.id.t_total);
 
         //初始化Toolbar
-        toolbar.setTitle("accountbook");
+        toolbar.setTitle("记账本");
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        drawerHeader = navigationView.inflateHeaderView(R.layout.drawer_header);
-        drawerIv = drawerHeader.findViewById(R.id.drawer_iv);
-        drawerTvAccount = drawerHeader.findViewById(R.id.drawer_tv_name);
 
 
 
-        setDrawerHeaderAccount();
+
+
 
         //初始化ViewPager
         mFragmentManager = getSupportFragmentManager();
         mFragmentPagerAdapter = new MainFragmentPagerAdapter(mFragmentManager);
         mFragmentPagerAdapter.addFragment(monthListFragment, "明细");
         mFragmentPagerAdapter.addFragment(monthChartFragment, "图表");
-
         monthListFragment.setMonthListListener((outcome, income, total) -> {
             tOutcome.setText(outcome);
             tIncome.setText(income);
@@ -152,6 +144,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main_toolbar, menu);
@@ -161,15 +155,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.toolbar_date:
+            case R.id.toolbar_add:
 
-                new TimePickerBuilder(mContext, (Date date, View v) -> {
-                    monthListFragment.changeDate(DateUtils.date2Str(date, "yyyy"), DateUtils.date2Str(date, "MM"));
-                    monthChartFragment.changeDate(DateUtils.date2Str(date, "yyyy"), DateUtils.date2Str(date, "MM"));
-                }).setType(new boolean[]{true, true, false, false, false, false})
-                        .setRangDate(null, Calendar.getInstance())
-                        .isDialog(true)
-                        .build().show();
+                Intent list = new Intent(this, BillAddActivity.class);
+                startActivity(list);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -180,9 +169,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.nav_setting:
-                SnackbarUtils.show(mContext, "还未开放此功能");
-                break;
+
             case R.id.nav_theme:
                 showUpdateThemeDialog();
                 break;
@@ -234,26 +221,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            switch (requestCode) {
-                case USERINFOACTIVITY_CODE:
-                    setDrawerHeaderAccount();
-                    break;
-                case LOGINACTIVITY_CODE:
-                    setDrawerHeaderAccount();
-                    break;
-            }
-        }
-    }
 
-    public void setDrawerHeaderAccount() {
-        currentUser = BmobUser.getCurrentUser(MyUser.class);
 
-            drawerTvAccount.setText("账号");
-            drawerIv.setImageResource(R.mipmap.ic_def_icon);
 
-    }
 }

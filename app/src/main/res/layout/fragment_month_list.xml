@@ -13,15 +13,6 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/float_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:src="@mipmap/tallybook_note"
-            app:elevation="3dp"
-            app:pressedTranslationZ="5dp"
-            app:layout_anchor="@id/rv_list"
-            app:layout_anchorGravity="bottom|center" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

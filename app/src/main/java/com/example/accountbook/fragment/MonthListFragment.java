@@ -85,7 +85,6 @@ public class MonthListFragment extends BaseMVPFragment<MonthListContract.Present
     protected void initWidget(Bundle savedInstanceState) {
         super.initWidget(savedInstanceState);
         rvList = getViewById(R.id.rv_list);
-        floatBtn = getViewById(R.id.float_btn);
 
         rvList.setItemAnimator(new DefaultItemAnimator() {
             @Override
@@ -101,13 +100,8 @@ public class MonthListFragment extends BaseMVPFragment<MonthListContract.Present
     @Override
     protected void initClick() {
         super.initClick();
-        //fab点击事件
-        floatBtn.setOnClickListener(v -> {
 
-                Intent intent = new Intent(getContext(), BillAddActivity.class);
-                startActivityForResult(intent, 0);
 
-        });
         //adapter的侧滑选项事件监听
         adapter.setOnStickyHeaderClickListener(new MonthListAdapter.OnStickyHeaderClickListener() {
             @Override
