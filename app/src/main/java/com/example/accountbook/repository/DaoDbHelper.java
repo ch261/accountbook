@@ -2,7 +2,7 @@ package com.example.accountbook.repository;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.accountbook.MyApplication;
+import com.example.accountbook.Activity.MyApplication;
 import com.example.accountbook.gen.DaoMaster;
 import com.example.accountbook.gen.DaoSession;
 

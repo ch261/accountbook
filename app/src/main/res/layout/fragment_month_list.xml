@@ -22,7 +22,6 @@
             app:elevation="3dp"
             app:pressedTranslationZ="5dp"
             app:layout_anchor="@id/rv_list"
-            app:layout_anchorGravity="bottom|center"
-            app:layout_behavior="com.example.accountbook.widget.ScrollAwareBehavior" />
+            app:layout_anchorGravity="bottom|center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

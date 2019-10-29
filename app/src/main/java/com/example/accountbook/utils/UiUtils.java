@@ -8,7 +8,7 @@ import android.view.View;
 
 import androidx.core.content.ContextCompat;
 
-import com.example.accountbook.MyApplication;
+import com.example.accountbook.Activity.MyApplication;
 
 
 public class UiUtils {

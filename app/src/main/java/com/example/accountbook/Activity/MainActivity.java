@@ -117,7 +117,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         drawerHeader = navigationView.inflateHeaderView(R.layout.drawer_header);
         drawerIv = drawerHeader.findViewById(R.id.drawer_iv);
         drawerTvAccount = drawerHeader.findViewById(R.id.drawer_tv_name);
-        drawerTvMail = drawerHeader.findViewById(R.id.drawer_tv_mail);
+
 
 
         setDrawerHeaderAccount();

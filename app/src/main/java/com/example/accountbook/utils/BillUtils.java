@@ -1,7 +1,6 @@
 package com.example.accountbook.utils;
 
 import com.example.accountbook.bean.BBill;
-import com.example.accountbook.bean.CoBill;
 import com.example.accountbook.bean.MonthAccountBean;
 import com.example.accountbook.bean.MonthChartBean;
 import com.example.accountbook.bean.MonthListBean;
@@ -243,26 +242,5 @@ public class BillUtils {
         return bean;
     }
 
-    /**
-     * CoBill=>BBill
-     *
-     * @param coBill
-     * @return
-     */
-    public static BBill toBBill(CoBill coBill) {
-        BBill bBill = new BBill();
-        bBill.setRid(coBill.getObjectId());
-        bBill.setVersion(coBill.getVersion());
-        bBill.setIncome(coBill.getIncome());
-        bBill.setCrdate(coBill.getCrdate());
-        bBill.setSortImg(coBill.getSortImg());
-        bBill.setSortName(coBill.getSortName());
-        bBill.setPayImg(coBill.getPayImg());
-        bBill.setPayName(coBill.getPayName());
-        bBill.setUserid(coBill.getUserid());
-        bBill.setContent(coBill.getContent());
-        bBill.setCost(coBill.getCost());
 
-        return bBill;
-    }
 }

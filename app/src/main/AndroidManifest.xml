@@ -17,7 +17,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name=".MyApplication"
+        android:name=".Activity.MyApplication"
         android:allowBackup="true"
         android:supportsRtl="true"
         android:label="@string/appname"

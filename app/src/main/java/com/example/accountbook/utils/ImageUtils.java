@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-import com.example.accountbook.MyApplication;
+import com.example.accountbook.Activity.MyApplication;
 import com.example.accountbook.R;
 
 import java.io.File;

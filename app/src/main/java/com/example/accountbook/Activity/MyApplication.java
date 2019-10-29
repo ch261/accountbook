@@ -1,4 +1,4 @@
-package com.example.accountbook;
+package com.example.accountbook.Activity;
 
 import android.app.Application;
 import android.content.Context;

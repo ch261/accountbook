@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.accountbook.Activity.BillAddActivity;
 import com.example.accountbook.Activity.SyncEvent;
-import com.example.accountbook.MyApplication;
+import com.example.accountbook.Activity.MyApplication;
 import com.example.accountbook.R;
 import com.example.accountbook.adapter.MonthListAdapter;
 import com.example.accountbook.bean.BBill;
@@ -113,8 +113,6 @@ public class MonthListFragment extends BaseMVPFragment<MonthListContract.Present
             @Override
             public void OnDeleteClick(BBill item, int section, int offset) {
                 item.setVersion(-1);
-                //将删除的账单版本号设置为负，而非直接删除
-                //便于同步删除服务器数据
                 ProgressUtils.show(mContext, "正在删除...");
                 mPresenter.updateBill(item);
                 part = section;

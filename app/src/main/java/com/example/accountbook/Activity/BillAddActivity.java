@@ -3,7 +3,6 @@ package com.example.accountbook.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.example.accountbook.MyApplication;
 import com.example.accountbook.R;
 import com.example.accountbook.adapter.BookNoteAdapter;
 import com.example.accountbook.adapter.MonthAccountAdapter;
@@ -184,7 +182,6 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
                 showTimeSelector();
                 break;
             case R.id.tb_note_remark://备注
-                showContentDialog();
                 break;
             case R.id.tb_calc_num_done://确定
                 doCommit();
@@ -302,26 +299,7 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
         }, mYear, mMonth, mDay).show();
     }
 
-    /**
-     * 显示备注内容输入框
-     */
-    public void showContentDialog() {
 
-        new MaterialDialog.Builder(this)
-                .title("备注")
-                .inputType(InputType.TYPE_CLASS_TEXT)
-                .inputRangeRes(0, 200, R.color.textRed)
-                .input("写点什么", remarkInput, (dialog, input) -> {
-                    if (input.equals("")) {
-                        Toast.makeText(getApplicationContext(), "内容不能为空！" + input,
-                                Toast.LENGTH_SHORT).show();
-                    } else {
-                        remarkInput = input.toString();
-                    }
-                })
-                .positiveText("确定")
-                .show();
-    }
 
     /**
      * 提交账单

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.accountbook.MyApplication;
+import com.example.accountbook.Activity.MyApplication;
 import com.example.accountbook.R;
 import com.example.accountbook.adapter.MonthChartBillViewBinder;
 import com.example.accountbook.bean.BBill;
@@ -104,8 +104,6 @@ public class MonthChartFragment extends BaseMVPFragment<MonthChartContract.Prese
         title = getViewById(R.id.title);
         money = getViewById(R.id.money);
         rankTitle = getViewById(R.id.rank_title);
-        layoutOther = getViewById(R.id.layout_other);
-        otherMoney = getViewById(R.id.other_money);
         swipe = getViewById(R.id.swipe);
         itemType = getViewById(R.id.item_type);
         itemOther = getViewById(R.id.item_other);
@@ -242,7 +240,7 @@ public class MonthChartFragment extends BaseMVPFragment<MonthChartContract.Prese
         }
         DecimalFormat df = new DecimalFormat("0.00%");
         title.setText(sort_name+" : "+df.format(value));
-        rankTitle.setText(sort_name + "排行榜");
+        rankTitle.setText("排行榜");
         circleBg.setImageDrawable(new ColorDrawable(Color.parseColor(back_color)));
         circleImg.setImageDrawable(PieChartUtils.getDrawable(tMoneyBeanList.get(index).getSortImg()));
 

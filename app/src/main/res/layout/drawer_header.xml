@@ -29,10 +29,6 @@
             android:text="账户"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="点我登陆"
-            android:id="@+id/drawer_tv_mail"/>
+
 
 </LinearLayout>

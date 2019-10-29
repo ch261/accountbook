@@ -3,7 +3,7 @@ package com.example.accountbook.utils;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 
-import com.example.accountbook.MyApplication;
+import com.example.accountbook.Activity.MyApplication;
 import com.example.accountbook.R;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
