@@ -17,13 +17,13 @@
         <include layout="@layout/app_toolbar"/>
 
         <include layout="@layout/app_top_date"/>
-
         <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tablayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
-                app:tabIndicatorColor="@color/background"/>
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:tabIndicatorColor="@color/background"/>
+
 
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.viewpager.widget.ViewPager
@@ -36,5 +36,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
         </FrameLayout>
+
+
     </androidx.viewpager.widget.ViewPager>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

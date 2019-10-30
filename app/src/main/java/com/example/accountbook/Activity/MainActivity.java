@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,14 +44,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private NavigationView navigationView;
     private TextView tOutcome;
     private TextView tIncome;
-    private TextView tTotal;
 
-    private View drawerHeader;
-    private ImageView drawerIv;
-    private TextView drawerTvAccount, drawerTvMail;
-
-    protected static final int USERINFOACTIVITY_CODE = 0;
-    protected static final int LOGINACTIVITY_CODE = 1;
 
     // Tab
     private FragmentManager mFragmentManager;
@@ -99,7 +90,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         navigationView = findViewById(R.id.main_nav_view);
         tOutcome = findViewById(R.id.t_outcome);
         tIncome = findViewById(R.id.t_income);
-        tTotal = findViewById(R.id.t_total);
+
 
         //初始化Toolbar
         toolbar.setTitle("记账本");
@@ -123,7 +114,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         monthListFragment.setMonthListListener((outcome, income, total) -> {
             tOutcome.setText(outcome);
             tIncome.setText(income);
-            tTotal.setText(total);
         });
 
         viewPager.setAdapter(mFragmentPagerAdapter);
