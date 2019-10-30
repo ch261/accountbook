@@ -209,9 +209,4 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 .negativeText("取消")
                 .show();
     }
-
-
-
-
-
 }

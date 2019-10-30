@@ -92,7 +92,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_above="@+id/select_layout"
+        android:layout_above="@+id/bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="17dp">
@@ -130,63 +130,7 @@
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/select_layout"
-        android:layout_above="@+id/view_line"
-        android:layout_marginBottom="15dp"
-        android:orientation="horizontal"
-        android:background="@drawable/shape_tb_calc"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/tb_note_cash"
-            android:text="现金"
-            android:background="@drawable/shape_tb_cash"
-            android:textSize="15sp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="6dp"
-            android:paddingBottom="7dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="7dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/tb_note_date"
-            android:background="@drawable/shape_tb_cash"
-            android:textSize="15sp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="6dp"
-            android:paddingBottom="7dp"
-            android:layout_marginTop="7dp"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RelativeLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
 
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/tb_note_remark"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:paddingLeft="10dp"
-                android:paddingTop="5dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="5dp"
-                android:src="@mipmap/ic_tb_note_remark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </RelativeLayout>
-
-    </LinearLayout>
 
     <View
         android:id="@+id/view_line"

@@ -1,12 +1,10 @@
 package com.example.accountbook.Activity;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,8 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.accountbook.R;
 import com.example.accountbook.adapter.BookNoteAdapter;
 import com.example.accountbook.adapter.MonthAccountAdapter;
@@ -49,9 +45,6 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
     private TextView outcomeTv;   //支出按钮
     private TextView sortTv;     //显示选择的分类
     private TextView moneyTv;     //金额
-    private TextView dateTv;      //时间选择
-    private TextView cashTv;      //支出方式选择
-    private ImageView remarkIv;   //
     private ViewPager viewpagerItem;
     private LinearLayout layoutIcon;
 
@@ -133,14 +126,10 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
         outcomeTv = findViewById(R.id.tb_note_outcome);
         sortTv = findViewById(R.id.item_tb_type_tv);
         moneyTv = findViewById(R.id.tb_note_money);
-        dateTv = findViewById(R.id.tb_note_date);
-        cashTv = findViewById(R.id.tb_note_cash);
-        remarkIv = findViewById(R.id.tb_note_remark);
         viewpagerItem = findViewById(R.id.viewpager_item);
         layoutIcon = findViewById(R.id.layout_icon);
 
-        //设置账单日期
-        dateTv.setText(days);
+
         //设置金额
         moneyTv.setText(num + dotNum);
     }
@@ -150,9 +139,6 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
         super.initClick();
         incomeTv.setOnClickListener(this);
         outcomeTv.setOnClickListener(this);
-        cashTv.setOnClickListener(this);
-        dateTv.setOnClickListener(this);
-        remarkIv.setOnClickListener(this);
     }
 
     @Override
@@ -174,14 +160,6 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
             case R.id.tb_note_outcome://支出
                 isOutcome = true;
                 setTitleStatus();
-                break;
-            case R.id.tb_note_cash://现金
-                showPayinfoSelector();
-                break;
-            case R.id.tb_note_date://日期
-                showTimeSelector();
-                break;
-            case R.id.tb_note_remark://备注
                 break;
             case R.id.tb_calc_num_done://确定
                 doCommit();
@@ -248,55 +226,6 @@ public class BillAddActivity extends BaseMVPActivity<BillContract.Presenter>
                     break;
             }
         }
-    }
-
-    /**
-     * 显示支付方式选择器
-     */
-    public void showPayinfoSelector() {
-        new MaterialDialog.Builder(mContext)
-                .title("选择支付方式")
-                .titleGravity(GravityEnum.CENTER)
-                .items(cardItems)
-                .positiveText("确定")
-                .negativeText("取消")
-                .itemsCallbackSingleChoice(selectedPayinfoIndex, (dialog, itemView, which, text) -> {
-                    selectedPayinfoIndex = which;
-                    cashTv.setText(cardItems.get(which));
-                    dialog.dismiss();
-                    return false;
-                }).show();
-    }
-
-    /**
-     * 显示日期选择器
-     */
-    public void showTimeSelector() {
-        new DatePickerDialog(this, (DatePicker datePicker, int i, int i1, int i2) -> {
-            mYear = i;
-            mMonth = i1;
-            mDay = i2;
-            if (mMonth + 1 < 10) {
-                if (mDay < 10) {
-                    days = new StringBuffer().append(mYear).append("-").append("0").
-                            append(mMonth + 1).append("-").append("0").append(mDay).toString();
-                } else {
-                    days = new StringBuffer().append(mYear).append("-").append("0").
-                            append(mMonth + 1).append("-").append(mDay).toString();
-                }
-
-            } else {
-                if (mDay < 10) {
-                    days = new StringBuffer().append(mYear).append("-").
-                            append(mMonth + 1).append("-").append("0").append(mDay).toString();
-                } else {
-                    days = new StringBuffer().append(mYear).append("-").
-                            append(mMonth + 1).append("-").append(mDay).toString();
-                }
-
-            }
-            dateTv.setText(days);
-        }, mYear, mMonth, mDay).show();
     }
 
 
