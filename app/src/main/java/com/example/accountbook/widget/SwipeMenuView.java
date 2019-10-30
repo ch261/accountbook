@@ -54,21 +54,15 @@ public class SwipeMenuView extends ViewGroup {
     private VelocityTracker mVelocityTracker;
     private android.util.Log LogUtils;
 
-    /**
-     * 右滑删除功能的开关,默认开
-     */
+
     private boolean isSwipeEnable;
 
-    /**
-     * IOS、QQ式交互，默认开
-     */
+
     private boolean isIos;
 
     private boolean iosInterceptFlag;
 
-    /**
-     * 20160929add 左滑右滑的开关,默认左滑打开菜单
-     */
+
     private boolean isLeftSwipe;
 
     public SwipeMenuView(Context context) {
@@ -88,11 +82,7 @@ public class SwipeMenuView extends ViewGroup {
         return isSwipeEnable;
     }
 
-    /**
-     * 设置侧滑功能开关
-     *
-     * @param swipeEnable
-     */
+
     public void setSwipeEnable(boolean swipeEnable) {
         isSwipeEnable = swipeEnable;
     }
@@ -102,11 +92,7 @@ public class SwipeMenuView extends ViewGroup {
         return isIos;
     }
 
-    /**
-     * 设置是否开启IOS阻塞式交互
-     *
-     * @param ios
-     */
+
     public SwipeMenuView setIos(boolean ios) {
         isIos = ios;
         return this;
@@ -116,22 +102,13 @@ public class SwipeMenuView extends ViewGroup {
         return isLeftSwipe;
     }
 
-    /**
-     * 设置是否开启左滑出菜单，设置false 为右滑出菜单
-     *
-     * @param leftSwipe
-     * @return
-     */
+
     public SwipeMenuView setLeftSwipe(boolean leftSwipe) {
         isLeftSwipe = leftSwipe;
         return this;
     }
 
-    /**
-     * 返回ViewCache
-     *
-     * @return
-     */
+
     public static SwipeMenuView getViewCache() {
         return mViewCache;
     }

@@ -3,9 +3,9 @@
 
 
     <item
-        android:id="@+id/toolbar_add"
-        android:icon="@mipmap/tallybook_note"
-        android:orderInCategory="100"
-        android:title="添加"
-        app:showAsAction="always" />
+    android:id="@+id/toolbar_add"
+    android:icon="@mipmap/tallybook_note"
+    android:orderInCategory="100"
+    android:title="添加"
+    app:showAsAction="always" />
 </menu>

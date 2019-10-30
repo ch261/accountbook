@@ -9,12 +9,12 @@ import org.greenrobot.greendao.annotation.Id;
 public class BBill{
 
     @Id(autoincrement = true)
-    private Long id;  //本地id
+    private Long id;
 
-    private String rid;  //服务器端id
+    private String rid;
     private float cost;  //金额
     private String content;  //内容
-    private String userid;  //用户id
+    private String userid;
     private String payName;  //支付方式
     private String payImg;  //
     private String sortName;  //账单分类

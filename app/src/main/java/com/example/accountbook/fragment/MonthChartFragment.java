@@ -1,7 +1,6 @@
 package com.example.accountbook.fragment;
 
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,7 +23,6 @@ import com.example.accountbook.present.MonthChartPresenter;
 import com.example.accountbook.utils.DateUtils;
 import com.example.accountbook.utils.PieChartUtils;
 import com.example.accountbook.utils.SnackbarUtils;
-import com.example.accountbook.widget.CircleImageView;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieEntry;
@@ -49,8 +47,7 @@ public class MonthChartFragment extends BaseMVPFragment<MonthChartContract.Prese
     private TextView centerMoney;
     private LinearLayout layoutCenter;
     private ImageView centerImg;
-    private CircleImageView circleBg;
-    private ImageView circleImg;
+
     private RelativeLayout layoutCircle;
     private TextView title;
     private TextView money;
@@ -98,8 +95,7 @@ public class MonthChartFragment extends BaseMVPFragment<MonthChartContract.Prese
         centerMoney = getViewById(R.id.center_money);
         layoutCenter = getViewById(R.id.layout_center);
         centerImg = getViewById(R.id.center_img);
-        circleBg = getViewById(R.id.circle_bg);
-        circleImg = getViewById(R.id.circle_img);
+
         layoutCircle = getViewById(R.id.layout_circle);
         title = getViewById(R.id.title);
         money = getViewById(R.id.money);
@@ -241,8 +237,6 @@ public class MonthChartFragment extends BaseMVPFragment<MonthChartContract.Prese
         DecimalFormat df = new DecimalFormat("0.00%");
         title.setText(sort_name+" : "+df.format(value));
         rankTitle.setText(" ");
-        circleBg.setImageDrawable(new ColorDrawable(Color.parseColor(back_color)));
-        circleImg.setImageDrawable(PieChartUtils.getDrawable(tMoneyBeanList.get(index).getSortImg()));
 
 //        adapter.setSortName(sort_name);
         adapter.setItems(tMoneyBeanList.get(index).getList());

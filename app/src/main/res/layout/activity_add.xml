@@ -22,19 +22,7 @@
                 android:src="@mipmap/ic_back"
                 android:onClick="onClick"
                 android:layout_marginLeft="15dp"/>
-            <TextView
-                android:id="@+id/mine_frag_tv"
-                android:text="明细"
-                android:textSize="13sp"
-                android:textColor="@color/white"
-                android:layout_marginLeft="5dp"
-                android:paddingTop="10dp"
-                android:visibility="gone"
-                android:paddingBottom="10dp"
-                android:paddingRight="10dp"
-                android:layout_toRightOf="@+id/back_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+
         </RelativeLayout>
         <RelativeLayout
             android:layout_centerInParent="true"

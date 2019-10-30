@@ -12,14 +12,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.example.accountbook.widget.SwipeMenuView;
-import com.example.accountbook.widget.StickyHeaderGridAdapter;
 import com.example.accountbook.R;
 import com.example.accountbook.bean.BBill;
 import com.example.accountbook.bean.MonthListBean;
 import com.example.accountbook.utils.DateUtils;
 import com.example.accountbook.utils.ImageUtils;
-
+import com.example.accountbook.widget.StickyHeaderGridAdapter;
+import com.example.accountbook.widget.SwipeMenuView;
 
 import java.util.List;
 
@@ -101,26 +100,7 @@ public class MonthListAdapter extends StickyHeaderGridAdapter {
             holder.item_money.setText("-" + bBill.getCost());
         }
 
-        //监听侧滑删除事件
-        holder.item_delete.setOnClickListener(v -> {
-            final int section1 = getAdapterPositionSection(holder.getAdapterPosition());
-            final int offset1 = getItemSectionOffset(section1, holder.getAdapterPosition());
 
-            new AlertDialog.Builder(mContext).setTitle("是否删除此条记录")
-                    .setNegativeButton("取消", null)
-                    .setPositiveButton("确定", (dialog, which) -> {
-                        onStickyHeaderClickListener
-                                .OnDeleteClick(mDatas.get(section1).getList().get(offset1), section1, offset1);
-                    })
-                    .show();
-        });
-        //监听侧滑编辑事件
-        holder.item_edit.setOnClickListener(v -> {
-            final int section1 = getAdapterPositionSection(holder.getAdapterPosition());
-            final int offset1 = getItemSectionOffset(section1, holder.getAdapterPosition());
-            onStickyHeaderClickListener.OnEditClick(
-                    mDatas.get(section1).getList().get(offset1), section1, offset1);
-        });
         //监听单击显示详情事件
         holder.item_layout.setOnClickListener(v -> {
             new MaterialDialog.Builder(mContext)
@@ -133,11 +113,26 @@ public class MonthListAdapter extends StickyHeaderGridAdapter {
                     .limitIconToDefaultSize()
                     .show();
         });
+
+        holder.item_layout.setOnLongClickListener(v -> {
+            final int section1 = getAdapterPositionSection(holder.getAdapterPosition());
+            final int offset1 = getItemSectionOffset(section1, holder.getAdapterPosition());
+
+            new AlertDialog.Builder(mContext).setTitle("是否删除此条记录")
+                    .setNegativeButton("取消", null)
+                    .setPositiveButton("确定", (dialog, which) -> {
+                        onStickyHeaderClickListener
+                                .OnDeleteClick(mDatas.get(section1).getList().get(offset1), section1, offset1);
+                    })
+                    .show();
+            return true;
+        });
     }
 
-    /**
-     * 自定义编辑、删除接口
-     */
+
+
+
+
     public interface OnStickyHeaderClickListener {
         void OnDeleteClick(BBill item, int section, int offset);
 

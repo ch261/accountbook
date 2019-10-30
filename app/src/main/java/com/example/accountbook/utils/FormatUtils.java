@@ -5,9 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Created by 42147 on 2017/2/22.
- */
 
 public class FormatUtils {
 

@@ -109,7 +109,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         //初始化ViewPager
         mFragmentManager = getSupportFragmentManager();
         mFragmentPagerAdapter = new MainFragmentPagerAdapter(mFragmentManager);
-        mFragmentPagerAdapter.addFragment(monthListFragment, "明细");
+        mFragmentPagerAdapter.addFragment(monthListFragment, "账单");
         mFragmentPagerAdapter.addFragment(monthChartFragment, "图表");
         monthListFragment.setMonthListListener((outcome, income, total) -> {
             tOutcome.setText(outcome);
@@ -119,7 +119,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         viewPager.setAdapter(mFragmentPagerAdapter);
 
         //初始化TabLayout
-        tabLayout.addTab(tabLayout.newTab().setText("明细"));
+        tabLayout.addTab(tabLayout.newTab().setText("账单"));
         tabLayout.addTab(tabLayout.newTab().setText("图表"));
         tabLayout.setupWithViewPager(viewPager);
     }
@@ -139,6 +139,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main_toolbar, menu);
+        getMenuInflater().inflate(R.menu.fenmian, menu);
         return true;
     }
 

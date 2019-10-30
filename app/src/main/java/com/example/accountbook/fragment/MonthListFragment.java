@@ -6,12 +6,10 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.accountbook.Activity.BillAddActivity;
-import com.example.accountbook.Activity.SyncEvent;
 import com.example.accountbook.Activity.MyApplication;
+import com.example.accountbook.Activity.SyncEvent;
 import com.example.accountbook.R;
 import com.example.accountbook.adapter.MonthListAdapter;
-import com.example.accountbook.bean.BBill;
 import com.example.accountbook.bean.MonthListBean;
 import com.example.accountbook.present.MonthListContract;
 import com.example.accountbook.present.MonthListPresenter;
@@ -19,7 +17,6 @@ import com.example.accountbook.utils.DateUtils;
 import com.example.accountbook.utils.ProgressUtils;
 import com.example.accountbook.utils.SnackbarUtils;
 import com.example.accountbook.widget.StickyHeaderGridLayoutManager;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -38,7 +35,6 @@ public class MonthListFragment extends BaseMVPFragment<MonthListContract.Present
         implements MonthListContract.View {
 
     private RecyclerView rvList;
-    private FloatingActionButton floatBtn;
 
     int part, index;
     private static final int SPAN_SIZE = 1;
@@ -102,34 +98,7 @@ public class MonthListFragment extends BaseMVPFragment<MonthListContract.Present
         super.initClick();
 
 
-        //adapter的侧滑选项事件监听
-        adapter.setOnStickyHeaderClickListener(new MonthListAdapter.OnStickyHeaderClickListener() {
-            @Override
-            public void OnDeleteClick(BBill item, int section, int offset) {
-                item.setVersion(-1);
-                ProgressUtils.show(mContext, "正在删除...");
-                mPresenter.updateBill(item);
-                part = section;
-                index = offset;
-            }
 
-            @Override
-            public void OnEditClick(BBill item, int section, int offset) {
-                Intent intent = new Intent(mContext, BillAddActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putLong("id", item.getId());
-                bundle.putString("rid", item.getRid());
-                bundle.putString("sortName", item.getSortName());
-                bundle.putString("payName", item.getPayName());
-                bundle.putString("content", item.getContent());
-                bundle.putDouble("cost", item.getCost());
-                bundle.putLong("date", item.getCrdate());
-                bundle.putBoolean("income", item.isIncome());
-                bundle.putInt("version", item.getVersion());
-                intent.putExtra("bundle", bundle);
-                startActivityForResult(intent, 0);
-            }
-        });
     }
 
     @Override

@@ -93,28 +93,7 @@
                         android:paddingLeft="12dp">
 
 
-                        <RelativeLayout
-                            android:id="@+id/layout_circle"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_centerVertical="true">
 
-                            <com.example.accountbook.widget.CircleImageView
-                                android:id="@+id/circle_bg"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_centerInParent="true"
-                                android:src="#F28B3D" />
-
-                            <ImageView
-                                android:id="@+id/circle_img"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:scaleType="centerCrop"
-                                android:src="@mipmap/tallybook_other" />
-
-                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/title"
@@ -123,7 +102,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="11dp"
                             android:layout_toRightOf="@+id/layout_circle"
-                            android:text="商城消费"
+                            android:text="消费"
                             android:textColor="@color/text_black3"
                             android:textSize="15sp" />
 

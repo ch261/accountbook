@@ -123,9 +123,7 @@ public class ImageUtils {
      */
     public static Drawable getDrawable(String imgUrl){
         Drawable drawable = null;
-        if(imgUrl.equals("sort_shouxufei.png"))
-            drawable = MyApplication.application.getResources().getDrawable(R.mipmap.sort_shouxufei);
-        else if(imgUrl.equals("sort_huankuan.png"))
+        if(imgUrl.equals("sort_huankuan.png"))
             drawable = MyApplication.application.getResources().getDrawable(R.mipmap.sort_huankuan);
         else if(imgUrl.equals("sort_yongjin.png"))
             drawable = MyApplication.application.getResources().getDrawable(R.mipmap.sort_yongjin);
